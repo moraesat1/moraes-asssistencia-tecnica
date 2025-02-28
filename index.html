@@ -3,44 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moraes Assistência Técnica de Máquinas de Cortar Cabelo</title>
+    <title>Moraes Assistência Técnica</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #000; /* Fundo preto */
+            color: #fff; /* Texto branco */
         }
 
         header {
-            background: #333;
+            background: #000; /* Fundo escuro para o cabeçalho */
             color: #fff;
-            padding: 20px 0;
-            text-align: center;
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        header .logo img {
+            height: 50px; /* Tamanho da logo */
+            margin-right: 10px;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 1.8em;
+            color: #ffd700; /* Cor dourada para o nome */
         }
 
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
+            display: flex;
+            align-items: center;
         }
 
         nav ul li {
-            display: inline;
             margin: 0 15px;
+            position: relative;
+        }
+
+        nav ul li:not(:last-child)::after {
+            content: "|";
+            color: #ffd700; /* Cor dourada para a linha separadora */
+            position: absolute;
+            right: -15px;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700; /* Cor dourada no hover */
         }
 
         .container {
@@ -55,7 +82,7 @@
         }
 
         section h2 {
-            color: #333;
+            color: #ffd700; /* Cor dourada para títulos */
             font-size: 2em;
             margin-bottom: 20px;
             text-align: center;
@@ -65,6 +92,7 @@
             text-align: center;
             max-width: 800px;
             margin: 0 auto;
+            color: #ccc; /* Texto cinza claro */
         }
 
         .servicos, .lojas {
@@ -77,69 +105,39 @@
             flex: 1;
             margin: 10px;
             text-align: center;
-            background: #fff;
+            background: #333; /* Fundo escuro para os serviços */
             padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1); /* Sombra clara */
+            border-radius: 10px; /* Bordas arredondadas */
         }
 
         .servico h3, .loja h3 {
-            color: #333;
+            color: #feffb2; /* Cor dourada para títulos */
             font-size: 1.5em;
         }
 
         .servico p, .loja p {
             margin: 10px 0;
+            color: #ccc; /* Texto cinza claro */
         }
 
         .loja a {
             display: inline-block;
             margin-top: 10px;
             padding: 10px 20px;
-            background: #333;
+            background: #555; /* Botão mais claro */
             color: #fff;
             text-decoration: none;
+            border-radius: 5px; /* Bordas arredondadas */
+            transition: background 0.3s;
         }
 
         .loja a:hover {
-            background: #555;
-        }
-
-        form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        form label {
-            display: block;
-            margin-top: 10px;
-        }
-
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-            border: 1px solid #ccc;
-        }
-
-        form button {
-            display: block;
-            margin-top: 10px;
-            padding: 10px 20px;
-            background: #333;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-
-        form button:hover {
-            background: #555;
+            background: #777; /* Efeito hover no botão */
         }
 
         footer {
-            background: #333;
+            background: #222; /* Fundo escuro para o rodapé */
             color: #fff;
             text-align: center;
             padding: 20px 0;
@@ -154,58 +152,70 @@
         .imagem-destaque img {
             max-width: 100%;
             height: auto;
+            border-radius: 10px; /* Bordas arredondadas */
+        }
+
+        .servicos img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px; /* Bordas arredondadas */
         }
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Moraes Assistência Técnica</h1>
+            <div class="logo">
+                <img src="imagens/moraesassistenciatecnica.png" alt="Logo Moraes Assistência Técnica"> <!-- Adicione o caminho da sua logo -->
+                <h1>Moraes Assistência Técnica</h1>
+            </div>
             <nav>
                 <ul>
                     <li><a href="#sobre">Sobre Nós</a></li>
                     <li><a href="#servicos">Serviços</a></li>
                     <li><a href="#lojas">Nossas Lojas</a></li>
-                    <li><a href="#contato">Contato</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
     <section id="sobre" class="container">
-        <h2>Sobre Nós</h2>
-        <p>Somos especializados em conserto e manutenção de máquinas de cortar cabelo. Com anos de experiência, garantimos um serviço de qualidade para deixar suas máquinas como novas.</p>
         <div class="imagem-destaque">
-            <img src="ASSISTÊNCIA TÉCNICA.png" alt="Assistência Técnica">
+            <img src="imagens/Início.png" alt="Assistência Técnica">
         </div>
+        <h2>Sobre Nós</h2>
+        <p>A Moraes Assistência Técnica é referência em manutenção e reparo de máquinas de corte e acabamento para barbeiros. Com anos de experiência no mercado, oferecemos um serviço especializado, garantindo que suas ferramentas estejam sempre em perfeito funcionamento.
+
+            Nosso compromisso é proporcionar qualidade, precisão e durabilidade para as máquinas dos profissionais da barbearia. Realizamos diagnósticos precisos, trocas de peças, reparos eletrônicos, afiação de lâminas e muito mais, sempre com transparência e excelência.
+            
+            Além da assistência técnica, também investimos na formação de novos profissionais, oferecendo cursos presenciais para quem deseja se especializar na manutenção de máquinas.
+            
+            Seja para consertar sua máquina ou aprender uma nova profissão, a Moraes Assistência Técnica está aqui para atender você com confiança e profissionalismo!</p>
     </section>
 
     <section id="servicos" class="container">
         <h2>Nossos Serviços</h2>
         <div class="servicos">
             <div class="servico">
+                <img src="imagens/1.png" alt="Manutenção Preventiva">
                 <h3>Manutenção Preventiva</h3>
-                <p>Garanta o bom funcionamento das suas máquinas com nossa manutenção preventiva.</p>
+                <p>Este serviço serve para realizar a manutenção preventiva em máquinas de cortar cabelo, garantindo maior durabilidade, desempenho e evitando problemas futuros. Ideal para quem quer prolongar a vida útil do equipamento.</p>
             </div>
             <div class="servico">
-                <h3>Reparo de Motores</h3>
-                <p>Reparo especializado em motores de máquinas de cortar cabelo.</p>
+                <img src="imagens/2.png" alt="Afiação de Lâminas">
+                <h3>Afiação de Lâminas</h3>
+                <p>Este serviço serve para afiar lâminas de máquinas de cortar cabelo, tesouras e navalhas, garantindo cortes precisos e suaves. Deixe seus equipamentos sempre afiados e prontos para uso.</p>
             </div>
             <div class="servico">
-                <h3>Substituição de Lâminas</h3>
-                <p>Substituição e afiação de lâminas para cortes precisos.</p>
+                <img src="imagens/3.png" alt="Afiação de Tesouras">
+                <h3>Afiação de Tesouras</h3>
+                <p>Este serviço serve para afiar tesouras de barbeiro e cabeleireiro, garantindo cortes precisos e prolongando a vida útil do equipamento. Ideal para profissionais que buscam excelência no corte.</p>
             </div>
             <div class="servico">
-                <h3>Limpeza Interna e Externa</h3>
-                <p>Limpeza completa para manter suas máquinas em perfeito estado.</p>
+                <img src="imagens/4.png" alt="Troca de Guia e Mola">
+                <h3>Troca de Guia e Mola</h3>
+                <p>Este serviço serve para trocar a guia e a mola em máquinas sem fio Wahl, eliminando barulhos indesejados e restaurando o funcionamento suave e silencioso do equipamento.</p>
             </div>
-            <div class="servico">
-                <h3>Recuperação de Máquinas Antigas</h3>
-                <p>Recuperamos máquinas antigas, deixando-as como novas.</p>
-            </div>
-        </div>
-        <div class="imagem-destaque">
-            <img src="MESTRE DAS.png" alt="Máquinas com Rio">
         </div>
     </section>
 
@@ -213,38 +223,20 @@
         <h2>Nossas Lojas</h2>
         <div class="lojas">
             <div class="loja">
+                <img src="imagens/01 (1).png" alt="Loja Central do Brasil - RJ"> <!-- Adicione o caminho da imagem da loja 1 -->
                 <h3>Loja Central do Brasil - RJ</h3>
                 <p>Rua Bento Ribeiro, 85 - Mercado Popular Leonel de Moura Brizola</p>
                 <p>Telefone: (21) 96551-3535</p>
                 <a href="https://chat.inbarberapp.com/?id=eb555b23-8967-45a4-8bfa-3e0995881500" target="_blank">Agendar Serviço</a>
             </div>
             <div class="loja">
+                <img src="imagens/01.png" alt="Loja de Niterói"> <!-- Adicione o caminho da imagem da loja 2 -->
                 <h3>Loja de Niterói</h3>
                 <p>Rua São João, 75 - Centro de Niterói - Galeria Popular - Loja do Moraes</p>
                 <p>Telefone: (21) 96551-3535</p>
                 <a href="https://chat.fillapp.me/?id=bbd6eac2-c838-462f-ac37-29390ebcee7c" target="_blank">Agendar Serviço</a>
             </div>
         </div>
-        <div class="imagem-destaque">
-            <img src="MESTRE DAS (1).png" alt="Afiação de Lâminas">
-        </div>
-    </section>
-
-    <section id="contato" class="container">
-        <h2>Contato</h2>
-        <p>Entre em contato conosco para agendar um serviço ou tirar dúvidas.</p>
-        <form id="form-contato">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" required></textarea>
-
-            <button type="submit">Enviar</button>
-        </form>
     </section>
 
     <footer>
@@ -257,7 +249,6 @@
         document.getElementById('form-contato').addEventListener('submit', function(event) {
             event.preventDefault();
             alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
-            // Aqui você pode adicionar o código para enviar os dados do formulário para o servidor
         });
     </script>
 </body>
